@@ -3,7 +3,6 @@ import Header from './components/Header'
 import MainContent from './components/MainContent'
 import Footer from './components/Footer'
 import UserProfile from './components/UserProfile'
-import App from './App.css'
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <MainContent />
       <Footer />
       <div>
-        <UserProfile name='Ken' age={21} bio='Aspiring Front-End Developer' />
+        <UserProfile name='Alice' age={25} bio='Loves hiking and photography' />
       </div>
     </>
   )
