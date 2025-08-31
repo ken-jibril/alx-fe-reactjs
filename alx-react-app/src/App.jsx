@@ -13,6 +13,7 @@ function App() {
       <Footer />
       <div>
         <UserProfile name='Alice' age={25} bio='Loves hiking and photography' />
+        <UserProfile name='Ken' age={21} bio='Aspiring Front-End engineer.' />
       </div>
     </>
   )
