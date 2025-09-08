@@ -1,0 +1,16 @@
+body {
+  background-color: whitesmoke;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+p {
+  font-weight: bold;
+}
+.sayHello {
+  display: flex;
+  flex-direction: column;
+}
+div {
+  display: grid;
+  flex: 2;
+}
