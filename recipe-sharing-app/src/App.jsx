@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import RecipeList from './components/RecipeList'
-import RecipeForm from './components/RecipeForm'
+import AddRecipeForm from './components/RecipeForm'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <RecipeList />
-      <RecipeForm />
+      <AddRecipeForm />
     </>
   )
 }

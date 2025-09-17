@@ -2,14 +2,18 @@ import React from "react";
 import { useState } from "react";
 import useRecipeStore from "../store/RecipeStore";
 
-function RecipeForm() {
+function AddRecipeForm() {
     const addRecipe = useRecipeStore((state) => state.addRecipe);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addRecipe({ id: Date.now(), title, description });
+        addRecipe({ 
+            id: Date.now(), 
+            title, 
+            description 
+        });
         setTitle('');
         setDescription('');
     }
@@ -39,4 +43,4 @@ function RecipeForm() {
         </form>
     )
 }
-export default RecipeForm;
+export default AddRecipeForm;
