@@ -1,4 +1,4 @@
-import useRecipeStore from "./components/recipeStore";
+import useRecipeStore from "./recipeStore";
 
 
 function RecipeList() {
