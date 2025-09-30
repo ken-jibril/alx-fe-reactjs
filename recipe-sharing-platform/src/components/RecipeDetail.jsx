@@ -15,7 +15,7 @@ function RecipeDetail() {
       .catch((err) => console.error("Error loading recipe:", err));
   }, [id]);
 
-  if (!recipe) return <p className="text-center py-6">Loading recipe...</p>;
+  if (!recipe) return <p className="text-center py-6 text-2xl text-gray-500 mx-auto my-52">Loading recipe...</p>;
 
   return (
     <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-6 my-6">
