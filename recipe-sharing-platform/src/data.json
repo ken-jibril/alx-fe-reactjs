@@ -3,14 +3,47 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://placehold.co/200x200"
-
+    "image": "https://placehold.co/200x200",
+    "ingredients": [
+      "200g spaghetti",
+      "100g bacon or pancetta",
+      "2 large eggs",
+      "50g parmesan cheese",
+      "2 cloves garlic",
+      "Salt and black pepper to taste"
+    ],
+    "instructions": [
+      "Boil spaghetti in salted water until al dente.",
+      "Fry bacon with garlic until crispy, then remove garlic.",
+      "Whisk eggs with parmesan and black pepper.",
+      "Drain pasta and quickly toss with bacon.",
+      "Remove from heat and stir in the egg mixture.",
+      "Serve with extra parmesan and freshly ground pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://placehold.co/200x200"
-
+    "image": "https://placehold.co/200x200",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "150g plain yogurt",
+      "2 onions, finely chopped",
+      "3 cloves garlic, minced",
+      "1 tbsp ginger paste",
+      "2 tbsp curry powder",
+      "400g canned tomatoes",
+      "200ml heavy cream",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt, garlic, ginger, and curry powder for at least 1 hour.",
+      "Grill or pan-fry chicken until slightly charred.",
+      "Sauté onions until golden, then add tomatoes and simmer.",
+      "Add grilled chicken and cook for 15 minutes.",
+      "Stir in cream, season with salt and pepper.",
+      "Serve hot with rice or naan."
+    ]
   }
 ]
