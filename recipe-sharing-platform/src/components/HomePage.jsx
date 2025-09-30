@@ -18,20 +18,38 @@ function HomePage() {
     }, [])
 
     return ( 
-          <div className="mx-0">
-            {loading && <p>Loading</p>}
-            {error && <p>{setError}</p>}
-            <h1 className="bg-blue-800 w-full text-center text-4xl text-white py-2 ">Recipes</h1>
-            <div className="flex flex-wrap gap-8 shadow-lg bg-white max-w-fit rounded-xl items-center justify-center px-3 py-4 my-3 mx-auto">
-                {recipes.map(recipe => (
-                    <div key={recipe.id} className="shadow-lg bg-white rounded-xl p-4 max-w-xs flex flex-col items-center hover:scale-110 transition-transform duration-500 ease-in-out">
-                        <img src={recipe.image} alt={recipe.title} width='250' className="rounded-lg"/>
-                        <h2 className="bg-green-600 text-2xl px-4 max-w-fit py-2 my-2 rounded-lg font-semibold hover:text-white">{recipe.title}</h2>
-                        <p className="leading-relaxed ">{recipe.summary}</p>
-                        </div>
-                ))}
-            </div>
-          </div>
+         <div className="my-0">
+  {loading && <p>Loading...</p>}
+  {error && <p>{error}</p>}
+
+  <h1 className="bg-blue-800 w-full text-center text-4xl text-white py-2 mb-6">
+    Recipes
+  </h1>
+
+  {/* GRID CONTAINER */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {recipes.map((recipe) => (
+      <div
+        key={recipe.id}
+        className="shadow-lg bg-white rounded-xl p-4 max-w-xs flex flex-col items-center hover:scale-105 transition-transform duration-500 ease-in-out mx-auto"
+      >
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          width="250"
+          className="rounded-lg"
+        />
+        <h2 className="bg-green-600 text-2xl px-4 py-2 my-3 rounded-lg font-semibold text-center hover:text-white">
+          {recipe.title}
+        </h2>
+        <p className="leading-relaxed text-gray-700 text-center">
+          {recipe.summary}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
      );
 }
 
