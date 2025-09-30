@@ -6,14 +6,20 @@ export default function AddRecipeForm() {
   const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
 
+  // 🛠 Validation logic
   const validateForm = () => {
     let newErrors = {};
     if (!title.trim()) newErrors.title = "Title is required";
-    if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
+    if (!ingredients.trim()) {
+      newErrors.ingredients = "Ingredients are required";
+    } else if (ingredients.split("\n").length < 2) {
+      newErrors.ingredients = "Please enter at least two ingredients";
+    }
     if (!steps.trim()) newErrors.steps = "Preparation steps are required";
     return newErrors;
   };
 
+  // 🚀 Submit logic
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
@@ -22,7 +28,6 @@ export default function AddRecipeForm() {
       return;
     }
 
-    // 🚀 Example new recipe object
     const newRecipe = {
       id: Date.now(),
       title,
@@ -32,7 +37,7 @@ export default function AddRecipeForm() {
 
     console.log("Recipe submitted:", newRecipe);
 
-    // Reset form
+    // Reset form after successful submit
     setTitle("");
     setIngredients("");
     setSteps("");
@@ -46,7 +51,7 @@ export default function AddRecipeForm() {
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Title */}
+        {/* Recipe Title */}
         <div>
           <label className="block text-gray-700 font-medium mb-2">
             Recipe Title
@@ -97,7 +102,7 @@ export default function AddRecipeForm() {
           )}
         </div>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
