@@ -6,6 +6,7 @@ function RegistrationForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleSubmit = (e) => {
         // Handle form submission
@@ -16,11 +17,15 @@ function RegistrationForm() {
         setEmail("");
         setPassword("");
         setSubmitted(true);
+        setError(false);
 
 
     setTimeout(() => 
        setSubmitted(false)
     , 2000);
+
+    setTimeout(() => 
+       setError(false), 2000);
         
     }
     return ( 
@@ -62,6 +67,8 @@ function RegistrationForm() {
              <button type="submit">Submit</button>
 
              {submitted && <p>✅Form submitted successfully.</p>}
+             {error && <p>❌Form not submitted, Please try again.</p>}
+             
         </form>
      );
 }
