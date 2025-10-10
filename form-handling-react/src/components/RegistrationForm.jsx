@@ -16,6 +16,11 @@ function RegistrationForm() {
         setEmail("");
         setPassword("");
         setSubmitted(true);
+
+
+    setTimeout(() => 
+       setSubmitted(false)
+    , 2000);
         
     }
     return ( 
@@ -50,7 +55,7 @@ function RegistrationForm() {
              id="password"
              name="password"
              value={password}
-             onChange={(e) = setPassword(e.target.value)}
+             onChange={(e) => setPassword(e.target.value)}
              required
              />
 
