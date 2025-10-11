@@ -13,25 +13,23 @@ function RegistrationForm() {
         e.preventDefault();
         // Process form data
 
-                    if (username.length < 3) {
-            setError("Username must be at least 3 characters long.");
-            setSubmitted(false);
-            return;
-            }
+            if (!username) {
+        setError("Username is required");
+        setSubmitted(false);
+        return;
+        }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-            setError("Please enter a valid email address.");
-            setSubmitted(false);
-            return;
-            }
+        if (!email) {
+        setError("Email is required");
+        setSubmitted(false);
+        return;
+        }
 
-            const passwordRegex = /^(?=.*\d).{6,}$/;
-            if (!passwordRegex.test(password)) {
-            setError("Password must be at least 6 characters and contain a number.");
-            setSubmitted(false);
-            return;
-            }
+        if (!password) {
+        setError("Password is required");
+        setSubmitted(false);
+        return;
+        }
 
         console.log({ username, email, password });
         setUsername("");
