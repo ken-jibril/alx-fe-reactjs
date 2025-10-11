@@ -12,6 +12,27 @@ function RegistrationForm() {
         // Handle form submission
         e.preventDefault();
         // Process form data
+
+                    if (username.length < 3) {
+            setError("Username must be at least 3 characters long.");
+            setSubmitted(false);
+            return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+            setError("Please enter a valid email address.");
+            setSubmitted(false);
+            return;
+            }
+
+            const passwordRegex = /^(?=.*\d).{6,}$/;
+            if (!passwordRegex.test(password)) {
+            setError("Password must be at least 6 characters and contain a number.");
+            setSubmitted(false);
+            return;
+            }
+
         console.log({ username, email, password });
         setUsername("");
         setEmail("");
@@ -66,8 +87,8 @@ function RegistrationForm() {
 
              <button type="submit">Submit</button>
 
-             {submitted && <p>✅Form submitted successfully.</p>}
-             {error && <p>❌Form not submitted, Please try again.</p>}
+             {submitted && <p style={{}}>✅Form submitted successfully.</p>}
+             {error && <p style={{}}>❌Form not submitted, Please try again.</p>}
              
         </form>
      );
