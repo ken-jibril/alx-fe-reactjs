@@ -14,19 +14,19 @@ function RegistrationForm() {
         // Process form data
 
             if (!username) {
-        setError("Username is required");
+        setErrors("Username is required");
         setSubmitted(false);
         return;
         }
 
         if (!email) {
-        setError("Email is required");
+        setErrors("Email is required");
         setSubmitted(false);
         return;
         }
 
         if (!password) {
-        setError("Password is required");
+        setErrors("Password is required");
         setSubmitted(false);
         return;
         }
