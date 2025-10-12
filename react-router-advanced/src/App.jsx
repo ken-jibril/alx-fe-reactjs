@@ -6,6 +6,7 @@ import ProfileDetails from './pages/ProfileDetails';
 import ProfileSettings from './pages/ProfileSettings';
 import User from './pages/User';
 import ProtectedRoute from './components/ProtectedRoute';
+import BlogPost from './Pages/BlogPost';
 
 function App() {
   // 🧠 fake login state
@@ -49,6 +50,7 @@ function App() {
 
           {/* ✅ Dynamic Route */}
           <Route path="/user/:id" element={<User />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
 
           {/* 404 fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
