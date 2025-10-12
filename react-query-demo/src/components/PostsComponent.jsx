@@ -2,15 +2,29 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 export default function PostsComponent() {
+  // 🧠 Fetch function
   const fetchPosts = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     if (!response.ok) throw new Error('Network response was not ok');
     return response.json();
   };
 
-  const { data, error, isLoading, isError, refetch } = useQuery({
+  // ⚙️ React Query hook with advanced configs
+  const {
+    data,
+    error,
+    isLoading,
+    isError,
+    refetch,
+    isFetching,
+  } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
+    // 🧩 advanced settings for caching and refetching
+    cacheTime: 1000 * 60 * 5, // cache for 5 minutes
+    staleTime: 1000 * 30, // consider data fresh for 30 seconds
+    refetchOnWindowFocus: false, // don’t refetch when window regains focus
+    keepPreviousData: true, // keeps previous data during refetch
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -33,6 +47,8 @@ export default function PostsComponent() {
       >
         🔄 Refetch Posts
       </button>
+
+      {isFetching && <p style={{ color: '#555' }}>Refreshing data...</p>}
 
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {data.slice(0, 10).map((post) => (
