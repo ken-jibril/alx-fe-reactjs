@@ -1,16 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import PostsComponent from './PostsComponent';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Hello there</h1>
-    </>
-  )
+    <Router>
+      <div style={{ padding: 20 }}>
+        <h1>React Query Demo </h1>
+        <nav>
+          <Link to="/" style={{ marginRight: 10 }}>Home</Link>
+          <Link to="/posts">Posts</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<h2>Welcome! Click “Posts” to fetch data.</h2>} />
+          <Route path="/posts" element={<PostsComponent />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
